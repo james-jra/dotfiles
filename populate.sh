@@ -7,4 +7,3 @@ cp ~/dotfiles/.vimrc ~/.vimrc
 cp ~/dotfiles/.gitconfig ~/.gitconfig
 cp -r ~/dotfiles/scripts ~/
 
-
