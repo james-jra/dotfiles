@@ -1,0 +1,10 @@
+# select pane 1
+selectp -t 1
+# split pane 0 vertically to produce 84 column pane
+split-window -h -l 84
+# select pane 1
+selectp -t 1
+# split pane 1 vertically to produce 84 column pane
+split-window -h -l 84
+#select pane 1
+selectp -t 1
