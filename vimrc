@@ -14,14 +14,23 @@ set relativenumber
 set number
 set numberwidth=3
 
+let c_space_errors=1
+let python_space_errors=1
+
 set hlsearch
 " Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts.
 nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
 nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
-"map <Up>    <NOP>
-"map <Down>  <NOP>
-"map <Left>  <NOP>
-"map <Right> <NOP>
+
+" Git Gud
+noremap <Up>    <NOP>
+noremap <Down>  <NOP>
+noremap <Left>  <NOP>
+noremap <Right> <NOP>
+inoremap <Up>    <NOP>
+inoremap <Down>  <NOP>
+inoremap <Left>  <NOP>
+inoremap <Right> <NOP>
 "
 " enable folding
 set foldmethod=indent
@@ -42,8 +51,10 @@ let g:syntastic_python_python_exec = '/usr/bin/python3'
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_sh_checkers = ['shellcheck']
 let g:syntastic_xml_checkers = ['xmllint']
+let g:syntastic_rust_checkers = ['rustc']
+let g:rustfmt_autosave = 1
+
 
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeMapOpenInTab='<ENTER>'
 
-let g:rustfmt_autosave = 1
