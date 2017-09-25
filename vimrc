@@ -40,6 +40,9 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" recognize markdown files
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height=5
@@ -58,3 +61,6 @@ let g:rustfmt_autosave = 1
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeMapOpenInTab='<ENTER>'
 
+" Spellcheck underlines instead of highlights
+hi clear SpellBad
+hi SpellBad cterm=undercurl ctermfg=red
