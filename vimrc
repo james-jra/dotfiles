@@ -51,10 +51,16 @@ let g:syntastic_check_on_wq = 0
 
 " recognize markdown files
 autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd BufNewFile,BufRead *.cli set filetype=xml
 
-let g:syntastic_python_python_exec = '/usr/bin/python3'
+" Python stuff
+autocmd bufreadpre *.py setlocal textwidth=99 colorcolumn=100
+"let g:syntastic_python_python_exec = '/usr/bin/python3'
+let g:syntastic_python_python_exec = '/usr/bin/python'
 "let g:syntastic_python_checkers = ['flake8', 'pylint']
 let g:syntastic_python_checkers = ['flake8']
+
+
 let g:syntastic_sh_checkers = ['shellcheck']
 let g:syntastic_xml_checkers = ['xmllint']
 let g:syntastic_rust_checkers = ['rustc']
@@ -62,9 +68,14 @@ let g:syntastic_rust_checkers = ['rustc']
 let g:rustfmt_autosave = 1
 
 map <C-n> :NERDTreeToggle<CR>
-let NERDTreeMapOpenInTab='<ENTER>'
+" let g:NERDTreeDirArrows=0
+" let NERDTreeMapOpenInTab='<ENTER>'
 
 " better spell checking
 hi clear SpellBad
 hi clear SpellCap
 hi SpellBad cterm=undercurl ctermfg=yellow
+
+" Set up FZF
+set rtp+=/data/jra/.fzf
+map <C-p> :Files<CR>
