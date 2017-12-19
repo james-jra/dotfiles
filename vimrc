@@ -64,6 +64,7 @@ let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_sh_checkers = ['shellcheck']
 let g:syntastic_xml_checkers = ['xmllint']
 let g:syntastic_rust_checkers = ['rustc']
+" let g:syntastic_debug = 3
 
 let g:rustfmt_autosave = 1
 
@@ -76,6 +77,11 @@ hi clear SpellBad
 hi clear SpellCap
 hi SpellBad cterm=undercurl ctermfg=yellow
 
+set tags=./tags;/
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+
 " Set up FZF
 set rtp+=/data/jra/.fzf
 map <C-p> :Files<CR>
+map <C-q> :Tags<CR>
+
