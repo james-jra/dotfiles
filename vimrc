@@ -85,3 +85,4 @@ set rtp+=/data/jra/.fzf
 map <C-p> :Files<CR>
 map <C-q> :Tags<CR>
 
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
