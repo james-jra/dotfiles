@@ -1,8 +1,7 @@
 #!/bin/bash
 
-cp ~/dotfiles/bashrc ~/.bashrc
-cp ~/dotfiles/bash_aliases ~/.bash_aliases
-cp ~/dotfiles/tmux.conf ~/.tmux.conf
+echo 'source $HOME/dotfiles/bash/bashrc_main.sh' >> ~/.bashrc
+cp ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 cp ~/dotfiles/vimrc ~/.vimrc
 cp ~/dotfiles/gitconfig ~/.gitconfig
 cp -r ~/dotfiles/scripts ~/
