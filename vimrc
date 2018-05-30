@@ -1,4 +1,24 @@
-execute pathogen#infect()
+" ~~ Vundle setup ~~ "
+set nocompatible
+filetype off
+
+" Init Vundle
+set runtimepath+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Plugins - general
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'junegunn/fzf.vim'
+
+" Plugins - filetypes
+Plugin 'elzr/vim-json'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'nathanalderson/yang.vim'
+Plugin 'ambv/black' "Python formatting
+
+call vundle#end()
 filetype plugin indent on
 
 " ~~ Indentation and line length  ~~ "
@@ -55,6 +75,8 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " Ctrl-p opens FZF
 set rtp+=/data/jra/.fzf
 map <C-p> :Files<CR>
+" Ctrl-b executes Black - python reformatter
+map <C-b> :Black<CR>
 
 " ~~ Syntastic ~~ "
 set statusline+=%#warningmsg#
@@ -66,19 +88,25 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height=5
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" ~~ Filetype specific ~~ "
 " Bash
 let g:syntastic_sh_checkers = ['shellcheck']
+
 " Markdown
 autocmd BufNewFile,BufRead *.md set filetype=markdown
+
 " XML
 autocmd BufNewFile,BufRead *.cli set filetype=xml
 let g:syntastic_xml_checkers = ['xmllint']
+
 " Python
-" Extend linelength to 100
-autocmd bufreadpre *.py setlocal textwidth=99 colorcolumn=100
-"let g:syntastic_python_python_exec = '/usr/bin/python3'
-let g:syntastic_python_python_exec = '/usr/bin/python'
+autocmd BufReadPre *.py setlocal textwidth=99 colorcolumn=100
+" autocmd BufWritePost *.py execute ':Black'
+let g:black_linelength = 99
+let g:syntastic_python_python_exec = '/usr/bin/python3'
 let g:syntastic_python_checkers = ['flake8']
+
 " Rust
 let g:syntastic_rust_checkers = ['rustc']
 let g:rustfmt_autosave = 1
