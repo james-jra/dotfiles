@@ -1,5 +1,8 @@
 execute pathogen#infect()
 filetype plugin indent on
+
+" ~~ Indentation and line length  ~~ "
+set colorcolumn=80,100
 set textwidth=79
 "show existing tab with 2 spaces width
 set tabstop=2
@@ -9,23 +12,30 @@ set shiftwidth=2
 set expandtab
 set softtabstop=2
 set shiftround
-"set linenumbers on
+
+" ~~ Line numbers  ~~ "
 set relativenumber
 set number
 set numberwidth=3
 
-set colorcolumn=80,100
-
+"  ~~ Highlighting ~~ "
+syntax on
+set hlsearch
+" Trailing whitespace
 let c_space_errors=1
 highlight ExtraWhitespace ctermbg=blue guibg=blue
 match ExtraWhitespace /\s\+$/
+" F5 trims all trailing whitespace
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+" better spell checking
+hi clear SpellBad
+hi clear SpellCap
+hi SpellBad cterm=undercurl ctermfg=yellow
 
-set hlsearch
-" Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts.
-nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
-nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
-
-" Git Gud
+" ~~ Keybindings ~~ "
+" Sensible backspace
+set backspace=indent,eol,start
+" No arrow keys
 noremap <Up>    <NOP>
 noremap <Down>  <NOP>
 noremap <Left>  <NOP>
@@ -34,55 +44,41 @@ inoremap <Up>    <NOP>
 inoremap <Down>  <NOP>
 inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
-"
-" enable folding
-set foldmethod=indent
-set foldlevel=99
+" Ctrl-j/k inserts blank line below/above.
+nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
+" Ctrl-n opens NERDTree
+map <C-n> :NERDTreeToggle<CR>
+" Ctrl-\ like # but for tags.
+set tags=./tags;/
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+" Ctrl-p opens FZF
+set rtp+=/data/jra/.fzf
+map <C-p> :Files<CR>
 
+" ~~ Syntastic ~~ "
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
+" Global options
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height=5
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-" recognize markdown files
+" Bash
+let g:syntastic_sh_checkers = ['shellcheck']
+" Markdown
 autocmd BufNewFile,BufRead *.md set filetype=markdown
+" XML
 autocmd BufNewFile,BufRead *.cli set filetype=xml
-
-" Python stuff
+let g:syntastic_xml_checkers = ['xmllint']
+" Python
+" Extend linelength to 100
 autocmd bufreadpre *.py setlocal textwidth=99 colorcolumn=100
 "let g:syntastic_python_python_exec = '/usr/bin/python3'
 let g:syntastic_python_python_exec = '/usr/bin/python'
-"let g:syntastic_python_checkers = ['flake8', 'pylint']
 let g:syntastic_python_checkers = ['flake8']
-
-
-let g:syntastic_sh_checkers = ['shellcheck']
-let g:syntastic_xml_checkers = ['xmllint']
+" Rust
 let g:syntastic_rust_checkers = ['rustc']
-" let g:syntastic_debug = 3
-
 let g:rustfmt_autosave = 1
-
-map <C-n> :NERDTreeToggle<CR>
-" let g:NERDTreeDirArrows=0
-" let NERDTreeMapOpenInTab='<ENTER>'
-
-" better spell checking
-hi clear SpellBad
-hi clear SpellCap
-hi SpellBad cterm=undercurl ctermfg=yellow
-
-set tags=./tags;/
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-
-" Set up FZF
-set rtp+=/data/jra/.fzf
-map <C-p> :Files<CR>
-map <C-q> :Tags<CR>
-
-nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>

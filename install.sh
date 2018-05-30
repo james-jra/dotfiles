@@ -8,3 +8,7 @@ git clone https://github.com/junegunn/fzf.vim.git ~/.vim/bundle/fzf.vim
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
+
+python3.6 -m venv ~/.vim/py-venv
+~/.vim/py-venv/bin/pip install --upgrade pip
+~/.vim/py-venv/bin/pip install black
