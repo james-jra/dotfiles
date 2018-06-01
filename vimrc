@@ -38,7 +38,7 @@ set relativenumber
 set number
 set numberwidth=3
 
-"  ~~ Highlighting ~~ "
+" ~~ Highlighting ~~ "
 syntax on
 set hlsearch
 " Trailing whitespace
@@ -51,6 +51,11 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 hi clear SpellBad
 hi clear SpellCap
 hi SpellBad cterm=undercurl ctermfg=yellow
+
+" ~~ Remember last position when opening file ~~"
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
 
 " ~~ Keybindings ~~ "
 " Sensible backspace
