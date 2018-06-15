@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Populate dotfiles.
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+$DIR/populate.sh
+
 # Get ripgrep
 if which rg; then
     echo "RipGrep already installed"
@@ -26,6 +30,20 @@ else
     ~/.fzf/install
     echo "Fzf installed"
 fi
+
+# Get Pip
+if which pip3; then
+    echo "Pip already installed"
+else
+    echo "Installing Pip"
+    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    sudo python3 ./get-pip.py
+    rm ./get-pip.py
+    echo "Installed Pip"
+fi
+
+# TODO platform independent
+sudo apt-get install python3-venv
 
 # Get Vundle
 VUNDLE_DIR=~/.vim/bundle/Vundle.vim
