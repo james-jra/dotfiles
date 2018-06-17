@@ -1,0 +1,39 @@
+{
+  "special": {
+    "foreground": "0xd8dee8",
+    "background": "0x2f343f",
+    "cursor": "0xb48ead"
+  },
+  "black": {
+    "0": "0x4b5262",
+    "8": "0x434a5a"
+  },
+  "red": {
+    "1": "0xbf616a",
+    "9": "0xb3555e"
+  },
+  "green": {
+    "2": "0xa3be8c",
+    "10": "0x93ae7c"
+  },
+  "yellow": {
+    "3": "0xebcb8b",
+    "11": "0xdbbb7b"
+  },
+  "blue": {
+    "4": "0x81a1c1",
+    "12": "0x7191b1"
+  },
+  "magenta": {
+    "5": "0xb48ead",
+    "13": "0xa6809f"
+  },
+  "cyan": {
+    "6": "0x89d0bA",
+    "14": "0x7dbba8"
+  },
+  "white": {
+    "7": "0xe5e9f0",
+    "15": "0xd1d5dc"
+  }
+}

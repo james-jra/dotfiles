@@ -1,39 +1,39 @@
 {
   "special": {
-    "foreground": 0xc0c5ce,
-    "background": 0x273941,
-    "cursor": 0xc0c5ce
+    "foreground": "0xc0c5ce",
+    "background": "0x273941",
+    "cursor": "0xc0c5ce"
   },
   "black": {
-    0: 0x2c4b59,
-    8: 0x456472
+    "0": "0x2c4b59",
+    "8": "0x456472"
   },
   "red": {
-    1: 0xa66363,
-    9: 0xc27171
+    "1": "0xa66363",
+    "9": "0xc27171"
   },
   "green": {
-    2: 0x63a690,
-    10: 0x6dc2a3
+    "2": "0x63a690",
+    "10": "0x6dc2a3"
   },
   "yellow": {
-    3: 0xa6a663,
-    11: 0xbfc271
+    "3": "0xa6a663",
+    "11": "0xbfc271"
   },
   "blue": {
-    4: 0x6385a6,
-    12: 0x719bc2
+    "4": "0x6385a6",
+    "12": "0x719bc2"
   },
   "magenta": {
-    5: 0xbf9c86,
-    13: 0xbf9c86
+    "5": "0xbf9c86",
+    "13": "0xbf9c86"
   },
   "cyan": {
-    6: 0x63a69b,
-    14: 0x71c2af
+    "6": "0x63a69b",
+    "14": "0x71c2af"
   },
   "white": {
-    7: 0xc0c5ce,
-    15: 0xeff1f5
+    "7": "0xc0c5ce",
+    "15": "0xeff1f5"
   }
 }
