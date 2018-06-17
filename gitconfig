@@ -3,3 +3,19 @@
 	name = James Andrew
 [core]
 	editor = vim
+[color]
+  branch = auto
+  ui = auto
+[color "branch"]
+  current = green reverse
+  local = green
+  remote = yellow
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = green
+  changed = yellow
+  untracked = cyan
