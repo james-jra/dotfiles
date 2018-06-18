@@ -84,10 +84,21 @@ map <C-p> :Files<CR>
 " Ctrl-b executes Black - python reformatter
 map <C-b> :Black<CR>
 
-" ~~ Syntastic ~~ "
+" ~~ Statusline ~~ "
+" Always on
+:set laststatus=2
+" start of default statusline
+set statusline=%f\ %h%w%m%r\ 
+
+" Syntastic statusline
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+" end of default statusline (with ruler)
+set statusline+=%=%(%l,%c%V\ %=\ %P%)
+
+" ~~ Syntastic ~~ "
 " Global options
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
