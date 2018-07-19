@@ -120,7 +120,7 @@ let g:syntastic_xml_checkers = ['xmllint']
 " Python
 autocmd BufReadPre *.py setlocal textwidth=99 colorcolumn=88
 " autocmd BufWritePost *.py execute ':Black'
-let g:black_linelength = 99
+let g:black_linelength = 88
 let g:syntastic_python_python_exec = '/usr/bin/python3'
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_post_args = '--max-line-length=88'
