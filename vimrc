@@ -1,3 +1,4 @@
+"!!! If you use Neo-VIM, you're looking for ~/.config/nvim/init.vim !!!"
 " ~~ Vundle setup ~~ "
 set nocompatible
 filetype off
@@ -41,6 +42,7 @@ set numberwidth=3
 
 " ~~ Highlighting ~~ "
 syntax on
+colorscheme peachpuff
 set hlsearch
 " Trailing whitespace
 let c_space_errors=1
