@@ -5,4 +5,5 @@ cp ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 cp ~/dotfiles/vimrc ~/.vimrc
 cp ~/dotfiles/gitconfig ~/.gitconfig
 cp ~/dotfiles/ctags ~/.ctags
-# cp -r ~/dotfiles/scripts ~/
+mkdir -p ~/bin
+cp ~/dotfiles/bin/* ~/bin/

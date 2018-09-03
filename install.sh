@@ -43,7 +43,7 @@ else
 fi
 
 # TODO platform independent
-sudo apt-get install python3-venv
+# sudo apt-get install python3-venv
 
 # Get Vundle
 VUNDLE_DIR=~/.vim/bundle/Vundle.vim
