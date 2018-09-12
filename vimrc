@@ -81,7 +81,7 @@ map <C-n> :NERDTreeToggle<CR>
 set tags=./tags;/
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 " Ctrl-p opens FZF
-set rtp+=/data/jra/.fzf
+set rtp+=$HOME/.fzf
 map <C-p> :Files<CR>
 " Ctrl-b executes Black - python reformatter
 map <C-b> :Black<CR>
