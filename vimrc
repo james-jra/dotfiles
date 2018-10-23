@@ -12,6 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'junegunn/fzf.vim'
+Plugin 'Valloric/YouCompleteMe'
 
 " Plugins - filetypes
 Plugin 'elzr/vim-json'
@@ -19,6 +20,7 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'nathanalderson/yang.vim'
 Plugin 'ambv/black' "Python formatting
 Plugin 'rust-lang/rust.vim'
+Plugin 'cespare/vim-toml'
 
 call vundle#end()
 filetype plugin indent on
@@ -120,7 +122,7 @@ autocmd BufNewFile,BufRead *.cli set filetype=xml
 let g:syntastic_xml_checkers = ['xmllint']
 
 " Python
-autocmd BufReadPre *.py setlocal textwidth=99 colorcolumn=88
+autocmd BufReadPre *.py setlocal textwidth=90 colorcolumn=88
 " autocmd BufWritePost *.py execute ':Black'
 let g:black_linelength = 88
 let g:syntastic_python_python_exec = '/usr/bin/python3'
@@ -128,5 +130,5 @@ let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_post_args = '--max-line-length=88'
 
 " Rust
-let g:syntastic_rust_checkers = ['rustc']
+let g:rustfmt_command = 'rustfmt --force'
 let g:rustfmt_autosave = 1
