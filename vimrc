@@ -46,6 +46,7 @@ set numberwidth=3
 syntax on
 colorscheme peachpuff
 set hlsearch
+highlight Search ctermbg=DarkGreen ctermfg=black
 " Trailing whitespace
 let c_space_errors=1
 highlight ExtraWhitespace ctermbg=blue guibg=blue
@@ -130,5 +131,6 @@ let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_post_args = '--max-line-length=88'
 
 " Rust
-let g:rustfmt_command = 'rustfmt --force'
-let g:rustfmt_autosave = 1
+autocmd BufReadPre *.rs setlocal textwidth=102 colorcolumn=100
+" let g:rustfmt_command = 'cargo fmt'
+" let g:rustfmt_autosave = 1
