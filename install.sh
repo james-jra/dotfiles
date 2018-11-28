@@ -47,15 +47,16 @@ fi
 # sudo apt-get install neovim
 # sudo yum install neovim
 
-# Get Vundle
-VUNDLE_DIR=~/.vim/bundle/Vundle.vim
+# Get vim-plug
+PLUG_DIR=~/.local/share/nvim/site/autoload/plug.vim
 if [ -d "$VUNDLE_DIR" ]; then
-    echo "Vundle already installed"
-    echo "Updating Vundle plugins"
-    vim +PluginInstall! +qall
+    echo "Vim plug already installed"
+    echo "Updating VimPlug plugins"
+    vim +PlugInstall! +qall
 else
-    mkdir -p ~/.vim/bundle && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    echo "Vundle installed"
-    echo "Installing Vundle plugins"
-    vim +PluginInstall +qall
+    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    echo "Vim plug installed"
+    echo "Installing Vim plug plugins"
+    vim +PlugInstall +qall
 fi
