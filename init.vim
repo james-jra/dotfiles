@@ -131,5 +131,10 @@ let g:syntastic_python_flake8_post_args = '--max-line-length=88'
 
 " Rust
 autocmd BufReadPre *.rs setlocal textwidth=102 colorcolumn=100
-" let g:rustfmt_command = 'cargo fmt'
+let g:syntastic_rust_checkers = ['cargo']
+let g:rust_cargo_check_examples = 1
+let g:rust_cargo_check_tests = 1
+let g:rustfmt_command = 'cargo fmt'
 let g:rustfmt_autosave = 1
+let g:rust_use_custom_ctags_defs = 1
+
