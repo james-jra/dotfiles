@@ -20,6 +20,8 @@ Plug 'nathanalderson/yang.vim', { 'for': 'yang' }
 Plug 'ambv/black', { 'for': 'python' } "Python formatting
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 
 call plug#end()
 filetype plugin indent on
@@ -107,7 +109,7 @@ set statusline+=%=%(%l,%c%V\ %=\ %P%)
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height=5
-let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " ~~ Filetype specific ~~ "
@@ -134,7 +136,6 @@ autocmd BufReadPre *.rs setlocal textwidth=102 colorcolumn=100
 let g:syntastic_rust_checkers = ['cargo']
 let g:rust_cargo_check_examples = 1
 let g:rust_cargo_check_tests = 1
-let g:rustfmt_command = 'cargo fmt'
-let g:rustfmt_autosave = 1
+"let g:rustfmt_command = 'cargo fmt'
+"let g:rustfmt_autosave = 1
 let g:rust_use_custom_ctags_defs = 1
-

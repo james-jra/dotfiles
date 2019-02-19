@@ -12,3 +12,5 @@ alias gerp="grep"
 alias vi="vim"
 alias vim="nvim"
 alias sl="ls"
+
+alias dfloki="floki -c $HOME/workspace/floki.yaml"
